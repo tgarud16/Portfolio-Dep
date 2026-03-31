@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+
+  --color-primary: oklch(0.65 0.2 240);
+  /* Industrial Blue */
+  --color-primary-foreground: oklch(0.15 0.02 240);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 6px;
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.20 0.015 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.015 240);
+  --popover: oklch(0.99 0.005 240);
+  --popover-foreground: oklch(0.20 0.015 240);
+  --primary: oklch(0.55 0.15 240);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.01 240);
+  --secondary-foreground: oklch(0.20 0.015 240);
+  --muted: oklch(0.96 0.005 240);
+  --muted-foreground: oklch(0.50 0.02 240);
+  --accent: oklch(0.65 0.14 45);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.005 240);
+  --input: oklch(0.90 0.005 240);
+  --ring: oklch(0.55 0.15 240 / 50%);
+}
+
+:root.dark,
+.dark {
+  --background: oklch(0.06 0.01 250);
+  --foreground: oklch(0.9 0.02 240);
+  --card: oklch(0.11 0.015 250);
+  --card-foreground: oklch(0.9 0.02 240);
+  --popover: oklch(0.11 0.015 250);
+  --popover-foreground: oklch(0.9 0.02 240);
+  --primary: oklch(0.65 0.2 240);
+  --primary-foreground: oklch(0.06 0.02 250);
+  --secondary: oklch(0.13 0.02 250);
+  --secondary-foreground: oklch(0.9 0.02 240);
+  --muted: oklch(0.13 0.02 250);
+  --muted-foreground: oklch(0.6 0.05 240);
+  --accent: oklch(0.7 0.2 45);
+  --accent-foreground: oklch(0.06 0.02 250);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.9 0.02 240);
+  --border: oklch(1 0 0 / 7%);
+  --input: oklch(1 0 0 / 7%);
+  --ring: oklch(0.65 0.2 240 / 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground selection:bg-accent selection:text-accent-foreground;
+  }
+}
+
+/* Light mode grid - extremely subtle */
+.bg-blueprint-light {
+  background-image:
+    linear-gradient(oklch(0.85 0.01 240) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, oklch(0.85 0.01 240) 0.5px, transparent 0.5px),
+    linear-gradient(oklch(0.92 0.005 240) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, oklch(0.92 0.005 240) 0.5px, transparent 0.5px);
+  background-size:
+    80px 80px,
+    80px 80px,
+    20px 20px,
+    20px 20px;
+  opacity: 0.4;
+}
+
+/* 3-layer line grid - dark mode */
+.bg-blueprint {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 10%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 10%) 1px, transparent 1px),
+    linear-gradient(oklch(1 0 0 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 5%) 1px, transparent 1px),
+    linear-gradient(oklch(1 0 0 / 2%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 2%) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    40px 40px,
+    40px 40px,
+    10px 10px,
+    10px 10px;
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+  opacity: 0.3;
+  position: absolute;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    top: 0%;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+/* ── Motion Slider ── */
+.motion-slider-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.motion-slider-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes motion-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes motion-marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.motion-marquee {
+  animation: motion-marquee 20s linear infinite;
+}
+
+.motion-marquee-reverse {
+  animation: motion-marquee-reverse 20s linear infinite;
+}
+
+@keyframes motion-beam {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.motion-beam-gradient {
+  background: linear-gradient(90deg, transparent 0%, rgba(251, 146, 60, 0.15) 25%, rgba(251, 146, 60, 0.3) 50%, rgba(251, 146, 60, 0.15) 75%, transparent 100%);
+  background-size: 200% 100%;
+  animation: motion-beam 2s ease-in-out infinite;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ── Network Lines Animation ── */
+@keyframes network-flow-1 {
+  0% {
+    transform: translateX(-100%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(100vw) translateY(15vh);
+  }
+}
+
+@keyframes network-flow-2 {
+  0% {
+    transform: translateX(100vw) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-100%) translateY(-10vh);
+  }
+}
+
+@keyframes network-flow-3 {
+  0% {
+    transform: translateX(-100%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(100vw) translateY(-8vh);
+  }
+}
+
+.network-line {
+  position: absolute;
+  height: 1.5px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Temporary debug mode — add .network-debug to the container to test visibility */
+.network-debug .network-line {
+  height: 3px;
+  opacity: 0.35 !important;
+  filter: blur(0.5px);
+}
