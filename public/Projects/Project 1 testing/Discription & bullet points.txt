@@ -1,0 +1,73 @@
+PROJECT 1 — LEARNSPHERE (Testing Environment Version)
+📌 Description (Testing Version — Portfolio Ready)
+
+LearnSphere is a cloud-based learning platform developed as a real-world deployment simulation to understand how modern distributed systems operate in controlled environments. The platform is built using a microservices architecture where each service is independently containerized and deployed, enabling modular development of features such as user management, course delivery, video processing, analytics, and system monitoring.
+
+The infrastructure is designed for a single AWS region and single Availability Zone to replicate real deployment workflows while keeping resource usage optimized for testing purposes. This setup allowed experimentation with cluster orchestration, networking, deployment automation, and operational monitoring without requiring full high-availability configurations.
+
+A key focus of this project was automation and platform behavior validation. The system includes an event-driven media processing pipeline that automatically handles video uploads, triggers serverless processing workflows, and manages metadata updates. All infrastructure components are provisioned using Infrastructure as Code, enabling repeatable environment setup and teardown.
+
+This project demonstrates practical hands-on experience with container orchestration, CI/CD automation, cloud infrastructure provisioning, observability integration, and distributed system deployment within a controlled testing environment.
+
+🛠 Tech Stack
+
+React • NestJS • Node.js • Prisma
+AWS • Kubernetes (EKS) • Terraform
+Docker • Jenkins • ArgoCD
+PostgreSQL • Redis • DynamoDB
+Prometheus • Grafana • CloudWatch
+
+⭐ Key Highlights (Testing-Focused Version)
+• Domain-Driven Microservices Architecture
+
+Designed multiple independent services grouped by functional domains such as authentication, content management, analytics, and communication to simulate real distributed application structures.
+
+• API Gateway & Service Communication Design
+
+Implemented centralized routing and structured inter-service communication patterns to manage request flow across containerized components.
+
+• Event-Driven Video Processing Pipeline
+
+Built an automated workflow where file uploads trigger serverless processing tasks, media transformation, and metadata updates.
+
+• Single-AZ Kubernetes Deployment Simulation
+
+Configured a container orchestration environment within a single Availability Zone to test deployment workflows, namespace isolation, and resource governance.
+
+• Infrastructure as Code Automation
+
+Provisioned networking, compute, storage, and IAM configurations using modular Infrastructure as Code practices to ensure reproducible environments.
+
+• Kubernetes Namespace Isolation Strategy
+
+Organized services across multiple namespaces with resource quotas, network policies, and controlled workload separation.
+
+• CI/CD Workflow Standardization
+
+Developed reusable automation pipelines to handle build validation, containerization, and deployment preparation across multiple services.
+
+• GitOps-Based Deployment Management
+
+Implemented declarative deployment workflows to automatically synchronize application states with source control configurations.
+
+• Containerized Data Platform Simulation
+
+Configured relational and caching databases as stateful workloads with persistent storage to test service connectivity and data durability.
+
+• Monitoring & Observability Setup
+
+Integrated metrics, logging, and alerting tools to monitor system health and validate operational visibility.
+
+• Security & Access Policy Implementation
+
+Applied role-based access controls, secret management practices, and secure service communication configurations.
+
+• Backup & Data Lifecycle Testing
+
+Implemented automated backup workflows and storage lifecycle policies to simulate data protection strategies.
+
+🖼 Architecture Diagram Viewer (UI Description)
+
+This project includes multiple architecture diagrams illustrating infrastructure components, service communication flows, and deployment workflows.
+
+Users can expand diagrams into fullscreen view, navigate between diagrams using arrow controls, and close the viewer using on-screen controls or the ESC key.

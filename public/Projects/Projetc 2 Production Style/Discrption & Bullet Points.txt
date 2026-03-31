@@ -1,0 +1,70 @@
+PROJECT 1 — LEARNSPHERE (Learning Hub Platform)
+📌 Description (Portfolio Version)
+
+LearnSphere is a large-scale cloud-based learning platform designed to simulate how modern distributed applications operate in real environments. The system is built using a microservices architecture where each service is independently deployed and managed, allowing the platform to support complex features such as course management, user authentication, video streaming, analytics, and real-time communication.
+
+A major focus of this project was automation and operational design. The platform includes a serverless media pipeline that automatically processes uploaded videos into multiple streaming formats. The infrastructure is fully provisioned using Infrastructure as Code, enabling reproducible deployments and consistent environments.
+
+This project demonstrates hands-on experience with container orchestration, CI/CD automation, cloud infrastructure design, observability practices, and distributed system management.
+
+🛠 Tech Stack
+
+React • NestJS • Node.js • Prisma
+AWS • Kubernetes (EKS) • Terraform
+Docker • Jenkins • ArgoCD
+PostgreSQL • Redis • DynamoDB
+Prometheus • Grafana • CloudWatch
+
+⭐ Key Highlights (Expanded)
+• Domain-Driven Microservices Architecture
+
+Designed dozens of independent services organized by functional domains such as authentication, learning content, payments, communication, and analytics to ensure modularity and maintainability.
+
+• API Gateway & Service Communication Design
+
+Implemented centralized API routing and structured service-to-service communication patterns to handle request flow efficiently across distributed components.
+
+• Serverless Video Processing Pipeline
+
+Built a fully automated pipeline that triggers cloud functions upon file upload, processes media using FFmpeg, generates thumbnails, and updates metadata without manual intervention.
+
+• Adaptive Video Streaming System
+
+Configured storage workflows to convert media into streaming formats suitable for multiple device types and bandwidth conditions.
+
+• Infrastructure as Code Automation
+
+Provisioned entire cloud environments using Terraform modules, including networking, container clusters, storage services, and IAM configurations.
+
+• Kubernetes Deployment Architecture
+
+Deployed services across multiple namespaces with resource quotas, network policies, and isolation strategies to maintain stability and control resource usage.
+
+• CI/CD Standardization with Shared Libraries
+
+Created reusable CI workflows to automate building, testing, containerization, and deployment across multiple services.
+
+• GitOps Deployment Workflow
+
+Implemented continuous deployment using declarative configuration management, ensuring automated synchronization between source control and runtime environments.
+
+• Containerized Data Platform
+
+Configured stateful workloads including relational databases, document stores, and caching systems with persistent storage and backup strategies.
+
+• Monitoring & Observability Integration
+
+Established centralized dashboards for metrics, logs, and system health to enable proactive troubleshooting and operational visibility.
+
+• Security & Access Control Design
+
+Applied identity-based access policies, secure secret management practices, and role-based permissions across infrastructure components.
+
+• Automated Backup & Data Protection Strategy
+
+Implemented scheduled backups and storage lifecycle policies to ensure data durability and recovery readiness.
+
+🖼 Architecture Diagram Viewer (Use in UI)
+
+This project includes multiple system diagrams illustrating infrastructure layers, service interactions, and deployment workflows.
+Users can expand diagrams for detailed inspection, navigate between views using arrow controls, and close using the ESC key.

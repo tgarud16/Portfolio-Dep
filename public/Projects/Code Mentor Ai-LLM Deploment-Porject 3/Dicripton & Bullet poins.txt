@@ -1,0 +1,60 @@
+PROJECT 2 — CODEMENTOR AI PLATFORM
+📌 Description (Portfolio Version)
+
+CodeMentor AI is a cloud-based AI infrastructure platform designed to provide students with an interactive environment for AI-assisted coding and experimentation. The system focuses on deploying and managing AI workloads efficiently while maintaining cost optimization and operational reliability.
+
+The platform uses Kubernetes to isolate frontend and AI processing workloads into separate compute environments. It also integrates monitoring systems, security controls, and automation scripts to streamline deployment and operations.
+
+This project demonstrates practical implementation of cloud infrastructure design, workload isolation strategies, resource optimization techniques, and automation-driven deployment workflows.
+
+🛠 Tech Stack
+
+AWS • Kubernetes (EKS) • Terraform
+Ollama AI Runtime • Helm • Bash
+CloudWatch • Grafana • IAM
+
+⭐ Key Highlights (Expanded)
+• Dual Node Group Infrastructure Design
+
+Separated AI processing workloads and application services into distinct compute environments to improve performance and resource efficiency.
+
+• Cost-Optimized Cloud Architecture
+
+Designed infrastructure using optimized resource allocation, network configuration, and compute scaling strategies to reduce operational costs.
+
+• AI Runtime Deployment Strategy
+
+Configured containerized AI environments capable of running locally hosted models for secure and controlled execution.
+
+• Automated Infrastructure Provisioning
+
+Built automation scripts to deploy clusters, configure networking, and initialize runtime environments without manual setup.
+
+• Secure Network Architecture
+
+Implemented subnet isolation, security groups, and access controls to protect internal services from unauthorized access.
+
+• Kubernetes Workload Isolation
+
+Used namespace segmentation and resource limits to maintain stability between AI workloads and frontend services.
+
+• Monitoring & Resource Visibility
+
+Integrated monitoring dashboards to track CPU, memory, and workload performance for proactive system management.
+
+• Automated Deployment Workflow
+
+Designed scripts to automate application deployment, configuration updates, and lifecycle operations.
+
+• Logging & Operational Insights
+
+Configured centralized logging systems to capture runtime activity and support debugging processes.
+
+• Scalable AI Processing Environment
+
+Designed infrastructure capable of scaling compute resources based on workload demand without impacting application availability.
+
+🖼 Architecture Diagram Viewer (UI Text)
+
+This project contains multiple infrastructure diagrams illustrating cluster architecture, network design, and deployment workflows.
+Diagrams can be expanded, navigated using arrow controls, and closed using the ESC key.
